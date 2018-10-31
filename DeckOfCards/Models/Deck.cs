@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using DeckOfCards.Extensions;
 
 namespace DeckOfCards.Models
 {
@@ -30,5 +29,16 @@ namespace DeckOfCards.Models
             _cards.RemoveAt(0);
             return card;
         }
+
+        //public void ShuffleCards()
+        //{
+        //    _cards.Shuffle();
+        //}
+
+        public void ShuffleCards(List<Card> toShuffle)
+        {
+            toShuffle.Shuffle();
+        }
+
     }
 }

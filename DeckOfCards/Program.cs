@@ -19,6 +19,16 @@ namespace DeckOfCards
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
 
+            //shuffle the deck and write them out again
+            myDeck.ShuffleCards(myDeck.Cards);
+            Console.WriteLine("shuffled deck");
+            foreach (Card c in myDeck.Cards)
+            {
+                Console.WriteLine($"ID: {c.Id}, Name: {c.Name}, Effect: {c.Effect}");
+            }
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+
             //draw some cards
             var handCard = myDeck.DrawCard();
             Console.WriteLine($"Drawn card is: {handCard.Name}!");
