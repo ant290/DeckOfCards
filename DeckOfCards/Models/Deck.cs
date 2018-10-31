@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DeckOfCards.Models
 {
-    class Deck
+    public class Deck
     {
         List<Card> _cards = new List<Card>();
         List<Card> _disCards = new List<Card>();
