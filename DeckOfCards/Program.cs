@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeckOfCards.Models;
+using System;
 
 namespace DeckOfCards
 {
@@ -6,7 +7,15 @@ namespace DeckOfCards
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //instantiate deck and iterate through the list of cards to show them
+            Deck myDeck = new Deck();
+
+            foreach(Card c in myDeck.Cards)
+            {
+                Console.WriteLine($"ID: {c.id}, Name: {c.name}, Effect: {c.effect}");
+            }
+
+            Console.ReadLine();
         }
     }
 }
