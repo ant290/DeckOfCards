@@ -20,5 +20,15 @@ namespace DeckOfCards.Tests
             var card = myDeck.DrawCard();
             Assert.Single(myDeck.DisCards);
         }
+
+        [Fact]
+        public void Test_Shuffle_randomisesCards()
+        {
+            var myDeck = new Deck();
+            var cards = myDeck.Cards.ToArray();
+            myDeck.ShuffleCards(myDeck.Cards);
+
+            Assert.NotEqual(myDeck.Cards, cards);
+        }
     }
 }
