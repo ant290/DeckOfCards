@@ -14,11 +14,31 @@ namespace DeckOfCards.Tests
         }
 
         [Fact]
-        public void Test_DrawCard_DiscardsACard()
+        public void Test_DrawCard_AddsACardToHand()
         {
             var myDeck = new Deck();
-            var card = myDeck.DrawCard();
+            myDeck.DrawCard();
+            Assert.Single(myDeck.Hand);
+        }
+
+        [Fact]
+        public void Test_DiscardFromHand_AddsCardToDiscard()
+        {
+            var myDeck = new Deck();
+            var myCard = myDeck.DrawCard();
+            myDeck.DiscardFromHand(myCard.Id);
+
             Assert.Single(myDeck.DisCards);
+        }
+
+        [Fact]
+        public void Test_DiscardFromHand_RemovesCardFromHand()
+        {
+            var myDeck = new Deck();
+            var myCard = myDeck.DrawCard();
+            myDeck.DiscardFromHand(myCard.Id);
+
+            Assert.Empty(myDeck.Hand);
         }
 
         [Fact]

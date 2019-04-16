@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DeckOfCards.Interfaces;
 
 namespace DeckOfCards.Models
 {
-    public class Card
+    public class Card: ICard
     {
         int _id;
         string _name;

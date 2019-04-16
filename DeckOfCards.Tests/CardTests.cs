@@ -29,4 +29,28 @@ namespace DeckOfCards.Tests
             Assert.Equal("effect", myCard.Effect);
         }
     }
+
+    //todo: refactor out if it gets lengthy
+    public class DamageCardTests
+    {
+        [Fact]
+        public void Test_DamageCard_SetsDamage()
+        {
+            var myCard = new DamageCard(1, "name", "effect", 3);
+
+            Assert.Equal(3, myCard.Damage);
+        }
+    }
+
+    //todo: refactor out if it gets lengthy
+    public class HealingCardTests
+    {
+        [Fact]
+        public void Test_HealingCard_SetsHealing()
+        {
+            var myCard = new HealingCard(1, "name", "effect", 4);
+
+            Assert.Equal(4, myCard.Healing);
+        }
+    }
 }

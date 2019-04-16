@@ -1,14 +1,17 @@
 ﻿using System.Collections.Generic;
 using DeckOfCards.Extensions;
+using DeckOfCards.Interfaces;
 
 namespace DeckOfCards.Models
 {
     public class Deck
     {
-        List<Card> _cards = new List<Card>();
-        List<Card> _disCards = new List<Card>();
-        public List<Card> Cards => _cards;
-        public List<Card> DisCards => _disCards;
+        List<ICard> _cards = new List<ICard>();
+        List<ICard> _hand = new List<ICard>();
+        List<ICard> _disCards = new List<ICard>();
+        public List<ICard> Cards => _cards;
+        public List<ICard> Hand => _hand;
+        public List<ICard> DisCards => _disCards;
 
         public Deck() {
             //instantiate deck of cards
@@ -21,21 +24,24 @@ namespace DeckOfCards.Models
             _cards.Add(new Card(i, n, e));
         }
 
-        public Card DrawCard()
+        public void DiscardFromHand(int id)
         {
-            //removes a card from the _cards list and moves it to the _disCards list
-            Card card = _cards[0];
+            //moves a card from _hand to _disCards
+            var card = _hand.Find(x => x.Id == id);
             _disCards.Add(card);
+            _hand.Remove(card);
+        }
+
+        public ICard DrawCard()
+        {
+            //removes a card from _cards and moves it to _hand
+            var card = _cards[0];
+            _hand.Add(card);
             _cards.RemoveAt(0);
             return card;
         }
 
-        //public void ShuffleCards()
-        //{
-        //    _cards.Shuffle();
-        //}
-
-        public void ShuffleCards(List<Card> toShuffle)
+        public void ShuffleCards(List<ICard> toShuffle)
         {
             toShuffle.Shuffle();
         }

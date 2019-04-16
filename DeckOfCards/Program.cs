@@ -30,16 +30,22 @@ namespace DeckOfCards
             Console.ReadKey();
 
             //draw some cards
-            var handCard = myDeck.DrawCard();
-            Console.WriteLine($"Drawn card is: {handCard.Name}!");
+            var drawnCard = myDeck.DrawCard();
+            Console.WriteLine($"Drawn card is: {drawnCard.Name}!");
             Console.ReadKey();
-            handCard = myDeck.DrawCard();
-            Console.WriteLine($"Drawn card is: {handCard.Name}!");
+            drawnCard = myDeck.DrawCard();
+            Console.WriteLine($"Drawn card is: {drawnCard.Name}!");
             Console.ReadKey();
 
-            //show cards in deck and discard pile
+            //show cards in deck, hand and discard pile
             Console.WriteLine("Cards in deck:");
             foreach (Card c in myDeck.Cards)
+            {
+                Console.WriteLine($"ID: {c.Id}, Name: {c.Name}, Effect: {c.Effect}");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Cards in hand:");
+            foreach (Card c in myDeck.Hand)
             {
                 Console.WriteLine($"ID: {c.Id}, Name: {c.Name}, Effect: {c.Effect}");
             }
