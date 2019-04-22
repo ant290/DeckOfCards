@@ -24,6 +24,15 @@ namespace DeckOfCards.Models
             _cards.Add(new Card(i, n, e));
         }
 
+        public void PlayFromHand(int id)
+        {
+            //plays a card and then moves it from _hand to _disCards
+            var card = _hand.Find(x => x.Id == id);
+            card.Play();
+            _disCards.Add(card);
+            _hand.Remove(card);
+        }
+
         public void DiscardFromHand(int id)
         {
             //moves a card from _hand to _disCards

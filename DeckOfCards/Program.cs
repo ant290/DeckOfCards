@@ -55,6 +55,25 @@ namespace DeckOfCards
             {
                 Console.WriteLine($"ID: {c.Id}, Name: {c.Name}, Effect: {c.Effect}");
             }
+            Console.WriteLine();
+
+            //play first card in hand
+            myDeck.PlayFromHand(myDeck.Hand[0].Id);
+
+            //show cards in hand and discard pile
+            Console.WriteLine();
+            Console.WriteLine("Cards in hand:");
+            foreach (Card c in myDeck.Hand)
+            {
+                Console.WriteLine($"ID: {c.Id}, Name: {c.Name}, Effect: {c.Effect}");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Cards in discard pile:");
+            foreach (Card c in myDeck.DisCards)
+            {
+                Console.WriteLine($"ID: {c.Id}, Name: {c.Name}, Effect: {c.Effect}");
+            }
+            Console.WriteLine();
 
             //exit
             Console.WriteLine("Press any key to exit");
