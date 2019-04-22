@@ -29,12 +29,12 @@ namespace DeckOfCards.Models
             //plays a card and then moves it from _hand to _disCards
             var card = _hand.Find(x => x.Id == id);
             card.Play();
-            _disCards.Add(card);
-            _hand.Remove(card);
+            DiscardFromHand(card.Id);
         }
 
         public void DiscardFromHand(int id)
         {
+            //TODO: unit test this DiscardFromHand()
             //moves a card from _hand to _disCards
             var card = _hand.Find(x => x.Id == id);
             _disCards.Add(card);

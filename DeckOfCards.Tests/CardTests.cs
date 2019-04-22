@@ -30,7 +30,7 @@ namespace DeckOfCards.Tests
         }
     }
 
-    //todo: refactor out if it gets lengthy
+    //TODO: refactor out if it gets lengthy
     public class DamageCardTests
     {
         [Fact]
@@ -42,7 +42,7 @@ namespace DeckOfCards.Tests
         }
     }
 
-    //todo: refactor out if it gets lengthy
+    //TODO: refactor out if it gets lengthy
     public class HealingCardTests
     {
         [Fact]

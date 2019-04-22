@@ -50,5 +50,14 @@ namespace DeckOfCards.Tests
 
             Assert.NotEqual(myDeck.Cards, cards);
         }
+
+        [Fact]
+        public void Test_PlayFromHand_Calls_Card_Play()
+        {
+            //fail until test written
+            //currently unable to mock out cards as they are 
+            //created when the deck constructor is called
+            Assert.Equal(1, 2);
+        }
     }
 }
