@@ -1,5 +1,6 @@
 ﻿using DeckOfCards.Interfaces;
 using DeckOfCards.Models;
+using DeckOfCards.Repos;
 using System;
 
 namespace DeckOfCards
@@ -8,8 +9,9 @@ namespace DeckOfCards
     {
         static void Main(string[] args)
         {
+            IDeckGenerator deckGenerator = new DeckGenerator();
             //instantiate deck 
-            IDeck myDeck = new Deck();
+            IDeck myDeck = deckGenerator.GenerateDeck();
 
             //iterate through the list of cards to show them
             Console.WriteLine("current deck");
