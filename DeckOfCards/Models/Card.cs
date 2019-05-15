@@ -13,11 +13,11 @@ namespace DeckOfCards.Models
         public string Effect => _effect;
 
         public Card() { }
-        public Card(int i, string n, string e)
+        public Card(int id, string name, string effect)
         {
-            _id = i;
-            _name = n;
-            _effect = e;
+            _id = id;
+            _name = name;
+            _effect = effect;
         }
         /// <summary>
         /// as this is the base card, it can only give its own details

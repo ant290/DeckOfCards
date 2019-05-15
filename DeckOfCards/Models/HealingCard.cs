@@ -7,9 +7,9 @@ namespace DeckOfCards.Models
         int _healing;
         public int Healing => _healing;
 
-        public HealingCard(int i, string n, string e, int h): base(i, n, e)
+        public HealingCard(int id, string name, string effect, int healing): base(id, name, effect)
         {
-            _healing = h;
+            _healing = healing;
         }
     }
 }

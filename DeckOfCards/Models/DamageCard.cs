@@ -7,9 +7,9 @@ namespace DeckOfCards.Models
         int _damage;
         public int Damage => _damage;
 
-        public DamageCard(int i, string n, string e, int d): base(i,n,e)
+        public DamageCard(int id, string name, string effect, int damage): base(id,name,effect)
         {
-            _damage = d;
+            _damage = damage;
         }
     }
 }
