@@ -15,6 +15,12 @@ namespace DeckOfCards.Models
             _health = 10;
         }
 
+        public Player(int id, int health)
+        {
+            _id = id;
+            _health = health;
+        }
+
         public void TakeDamage(int damage)
         {
             _health -= damage;
